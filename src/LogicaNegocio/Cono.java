@@ -57,6 +57,6 @@ public class Cono implements Figura {
 
     @Override
     public double calcularVolume() {
-        return (1.0/3.0)*PI*Math.pow(radio,2)*altura;
+        return (1.0/3.0)*PI*radio*radio*altura;
     }
 }
