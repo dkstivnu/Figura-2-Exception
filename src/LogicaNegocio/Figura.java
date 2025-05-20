@@ -4,7 +4,7 @@ public interface Figura {
 
     //Atributo
 
-    double PI = 3.14;
+    double PI = Math.PI;
 
     //Metodos propios
     double calcularArea();
