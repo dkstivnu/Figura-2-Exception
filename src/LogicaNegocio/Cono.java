@@ -1,7 +1,8 @@
 package LogicaNegocio;
 
 public class Cono implements Figura {
-   //Atributos
+
+    //Atributos
     private double generatriz;
     private double altura;
     private double radio;
@@ -25,15 +26,16 @@ public class Cono implements Figura {
         return generatriz;
     }
 
-    public void setGeneratriz(double generatriz) {
-        this.generatriz = generatriz;
-    }
-
     public double getAltura() {
         return altura;
     }
 
     public void setAltura(double altura) {
+        if (generatriz == 0) {
+            throw new IllegalArgumentException("La altura no debe ser cero");
+        } else if (generatriz < 0) {
+            throw new IllegalArgumentException("La altura no puede ser negativo");
+        }
         this.altura = altura;
     }
 
@@ -42,6 +44,11 @@ public class Cono implements Figura {
     }
 
     public void setRadio(double radio) {
+        if (generatriz == 0) {
+            throw new IllegalArgumentException("El radio no debe ser cero");
+        } else if (generatriz < 0) {
+            throw new IllegalArgumentException("La generatriz no puede ser negativo");
+        }
         this.radio = radio;
     }
 
@@ -51,12 +58,12 @@ public class Cono implements Figura {
 
     @Override
     public double calcularArea() {
-        return PI*radio*(radio+generatriz);
-
+        return PI * radio * (radio + generatriz);
     }
 
     @Override
-    public double calcularVolume() {
-        return (1.0/3.0)*PI*radio*radio*altura;
+    public double calcularVolumen() {
+        return (1.0 / 3.0) * PI *
+                radio * radio * altura;
     }
 }
