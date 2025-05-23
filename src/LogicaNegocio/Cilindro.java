@@ -23,6 +23,11 @@ public class Cilindro implements Figura{
     }
 
     public void setRadio(double radio) {
+        if (radio == 0) {
+            throw new IllegalArgumentException("El radio no debe ser cero");
+        } else if (radio < 0) {
+            throw new IllegalArgumentException("La generatriz no puede ser negativo");
+        }
         this.radio = radio;
     }
 
@@ -31,6 +36,11 @@ public class Cilindro implements Figura{
     }
 
     public void setAltura(double altura) {
+        if (altura == 0) {
+            throw new IllegalArgumentException("La altura no debe ser cero");
+        } else if (altura < 0) {
+            throw new IllegalArgumentException("La altura no puede ser negativo");
+        }
         this.altura = altura;
     }
 
