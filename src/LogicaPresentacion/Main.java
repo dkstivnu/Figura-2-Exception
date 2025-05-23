@@ -4,20 +4,20 @@ import LogicaNegocio.Cilindro;
 import LogicaNegocio.Cono;
 import LogicaNegocio.Figura;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
+    private Cono cono = null;
+    private Cilindro cilindro = null;
 
-    //Hacer los metdos de calcular area y volumen segun la figura
+    //Hacer los metodos de calcular área y volumen según la figura
 
-    public static void calcularOperacione(Figura figura){
-        System.out.println("Area:" +figura.calcularArea());
-        System.out.println("Volumen:" +figura.calcularVolume());
-    }
     public static void main(String[] args) {
 
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+
         int opcion;
+
         do {
 
             System.out.println("------Menu------");
@@ -26,33 +26,33 @@ public class Main {
             System.out.println("0. Salir");
 
 
-            opcion = scanner.nextInt();
+            opcion = sc.nextInt();
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Cilindro");
+                    System.out.println("* Agregar Cilindro");
                     System.out.print("Ingrese el radio: ");
-                    double radio= scanner.nextDouble();
+                    double radio = getADouble(sc);
                     System.out.print("Ingrese la altura: ");
-                    double altura = scanner.nextDouble();
+                    double altura = getADouble(sc);
 
                     Cilindro cilindro = new Cilindro(radio, altura);
-                    System.out.println("Resultado:");
-                    calcularOperacione(cilindro);
+                    System.out.println("----- Cilindro -----");
+                    calcularOperaciones(cilindro);
                     break;
 
                 case 2:
                     System.out.println("Cono");
                     System.out.print("Ingrese la generatriz: ");
-                    double generatriz = scanner.nextDouble();
+                    double generatriz = getADouble(sc);
                     System.out.print("Ingrese la altura: ");
-                    double alturaC = scanner.nextDouble();
+                    double alturaC = getADouble(sc);
                     System.out.print("Ingrese el radio: :");
-                    double radioC = scanner.nextDouble();
+                    double radioC = getADouble(sc);
 
-                    Cono cono = new Cono(generatriz,alturaC, radioC);
+                    Cono cono = new Cono(generatriz, alturaC, radioC);
                     System.out.println("Resultados:");
-                    calcularOperacione(cono);
+                    calcularOperaciones(cono);
 
                     break;
 
@@ -66,10 +66,30 @@ public class Main {
 
         } while (opcion != 0);
 
-        scanner.close();
+        sc.close();
+    }
 
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
+    private static double getADouble(Scanner sc) {
+        // d of double
+        double d;
 
+        do {
+            d = sc.nextDouble();
+
+            if (d < 0) {
+                System.out.println("El numero no puede ser negativo");
+            }
+            if (d == 0) {
+                System.out.println("El numero no puede ser cero");
+            }
+
+        } while (d <= 0.0);
+
+        return d;
+    }
+
+    public static void calcularOperaciones(Figura figura) {
+        System.out.println("Area:" + figura.calcularArea());
+        System.out.println("Volumen:" + figura.calcularVolumen());
     }
 }
