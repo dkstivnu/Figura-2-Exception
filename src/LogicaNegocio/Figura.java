@@ -8,9 +8,6 @@ public interface Figura {
 
     //Metodos propios
     double calcularArea();
-    double calcularVolume();
-
-
-
+    double calcularVolumen();
 
 }
