@@ -1,6 +1,6 @@
 package LogicaNegocio;
 
-public class Cilindro implements Figura{
+public class Cilindro implements Figura {
 
     //Atributos
     private double radio;
@@ -47,13 +47,13 @@ public class Cilindro implements Figura{
     //Metodos
     @Override
     public double calcularArea() {
-        return 2*PI*radio*radio*2*PI*radio*altura;
+        return 2 * PI * radio * radio * 2 * PI * radio * altura;
 
     }
 
     @Override
     public double calcularVolumen() {
-        return PI*radio*radio*altura ;
+        return PI * radio * radio * altura;
     }
-    }
+}
 
