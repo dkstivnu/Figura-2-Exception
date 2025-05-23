@@ -42,7 +42,7 @@ public class Cilindro implements Figura{
     }
 
     @Override
-    public double calcularVolume() {
+    public double calcularVolumen() {
         return PI*radio*radio*altura ;
     }
     }
