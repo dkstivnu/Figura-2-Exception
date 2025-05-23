@@ -31,9 +31,9 @@ public class Cono implements Figura {
     }
 
     public void setAltura(double altura) {
-        if (generatriz == 0) {
+        if (altura == 0) {
             throw new IllegalArgumentException("La altura no debe ser cero");
-        } else if (generatriz < 0) {
+        } else if (altura < 0) {
             throw new IllegalArgumentException("La altura no puede ser negativo");
         }
         this.altura = altura;
@@ -44,9 +44,9 @@ public class Cono implements Figura {
     }
 
     public void setRadio(double radio) {
-        if (generatriz == 0) {
+        if (radio == 0) {
             throw new IllegalArgumentException("El radio no debe ser cero");
-        } else if (generatriz < 0) {
+        } else if (radio < 0) {
             throw new IllegalArgumentException("La generatriz no puede ser negativo");
         }
         this.radio = radio;
