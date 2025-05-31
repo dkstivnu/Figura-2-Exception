@@ -47,7 +47,7 @@ public class Cilindro implements Figura {
     //Metodos
     @Override
     public double calcularArea() {
-        return 2 * PI * radio * radio * 2 * PI * radio * altura;
+        return 2 * PI * radio * radio + 2 * PI * radio * altura;
 
     }
 
