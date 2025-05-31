@@ -5,6 +5,7 @@ import LogicaNegocio.Cono;
 import LogicaNegocio.Figura;
 import LogicaNegocio.FormatDotFloatException;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -106,7 +107,7 @@ public class Main {
         do {
             try{
             d = sc.nextDouble();
-            } catch (NumberFormatException e) {
+            } catch (InputMismatchException e) {
                 throw new FormatDotFloatException("Error: Entrada invalida" +
                         " en el formato del signo de separacion decimal");
             }
