@@ -8,8 +8,8 @@ import LogicaNegocio.FormatDotFloatException;
 import java.util.Scanner;
 
 public class Main {
-    private Cono cono = null;
-    private static final Cilindro cilindro = null;
+    private static Cono cono = null;
+    private static Cilindro cilindro = null;
 
     //Hacer los metodos de calcular área y volumen según la figura
 
@@ -48,7 +48,7 @@ public class Main {
                     if (radio == 0 && altura == 0) {
                         System.out.println("No se puede crear un Cilindro");
                     } else {
-                        Cilindro cilindro = new Cilindro(radio, altura);
+                        cilindro = new Cilindro(radio, altura);
                     }
 
                     try {
@@ -77,7 +77,7 @@ public class Main {
                     }
 
                     try {
-                        Cono cono = new Cono(generatriz, alturaC, radioC);
+                        cono = new Cono(generatriz, alturaC, radioC);
                         System.out.println("Resultados:");
                         calcularOperaciones(cono);
                     } catch (NullPointerException e) {
